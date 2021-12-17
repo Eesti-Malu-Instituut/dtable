@@ -4,10 +4,12 @@ loadJSON(function(response) {
   let persons_table = document.createElement('table')
   persons_container.appendChild(persons_table)
   persons_table.id = 'persons_table'
+  persons_table.className = 'styled-table'
   let table_header = persons_table.createTHead()
   let header_row = table_header.insertRow(0)
   for (label in jsondata[0]) {
-    let header_cell = header_row.insertCell()
+    let header_cell = document.createElement("th")
+    header_row.appendChild(header_cell)
     header_cell.innerText = label
   }
   let table_body = persons_table.createTBody()
