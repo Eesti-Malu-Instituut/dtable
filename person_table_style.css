@@ -11,6 +11,8 @@
     background-color: #009879;
     color: #ffffff;
     text-align: left;
+    position: sticky;
+    top: 0;  
 }
 
 .styled-table th,
