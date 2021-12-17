@@ -1,20 +1,7 @@
-// GS-API-v3      https://spreadsheets.google.com/feeds/{{VIEW-TYPE}}/{{SPREADSHEET-ID}}/{{TAB-NUMBER}}/public/values
-// GS-API-v4      https://sheets.googleapis.com/v4/spreadsheets/{{spreadsheetId}}/values/Sheet1
-// GS web publish https://docs.google.com/spreadsheets/d/{{spreadsheetId}}/gviz/tq
-
-// https://sheets.googleapis.com/v4/spreadsheets/1LerMsaamv1roy3MfrtovFF7_cwa6sRQjpI8tZ4SpH28/values/päring
-// https://docs.google.com/spreadsheets/d/1LerMsaamv1roy3MfrtovFF7_cwa6sRQjpI8tZ4SpH28/gviz/tq
-//var request = new XMLHttpRequest()
-
-// request.open('GET', 'http://dummy.restapiexample.com/api/v1/employees', true)
-//request.open('GET', 'https://docs.google.com/spreadsheets/d/1LerMsaamv1roy3MfrtovFF7_cwa6sRQjpI8tZ4SpH28/gviz/tq', true)
-// request.open('GET', 'https://jsonplaceholder.typicode.com/photos', true)
-
-
 loadJSON(function(response) {
   // Parsing JSON string into object
   var jsondata = JSON.parse(response)
-  console.log(Object.keys(jsondata))
+  console.log(Object.keys(jsondata[0]))
   var col = [];
   window.cols = col;
   for (var i = 0; i < jsondata.length; i++) {
@@ -76,10 +63,9 @@ function pagination()
 function loadJSON(callback) {   
   var xobj = new XMLHttpRequest()
     xobj.overrideMimeType("application/json")
-    xobj.open('GET', 'echo.json', true) // Replace 'appDataServices' with the path to your file
+    xobj.open('GET', 'echo.json', true)
     xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+      if (xobj.readyState === 4 && xobj.status === "200") {
         callback(xobj.responseText)
     }
   }
