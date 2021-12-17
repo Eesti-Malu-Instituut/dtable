@@ -5,12 +5,12 @@ loadJSON(function(response) {
   var divContainer = document.getElementById("showData")
   jsondata.forEach(person => {
       console.log(person)
-      Object.keys(person).forEach(field => {
-          console.log(field)
-      })
+//      Object.keys(person).forEach(field => {
+//          console.log(field)
+//      })
   })
   return
-  
+
   for (var i = 0; i < jsondata.length; i++) {
       for (var key in jsondata[i]) {
           if (col.indexOf(key) === -1) {
