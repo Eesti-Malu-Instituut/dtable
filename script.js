@@ -2,8 +2,15 @@ loadJSON(function(response) {
   // Parsing JSON string into object
   var jsondata = JSON.parse(response)
   console.log(Object.keys(jsondata[0]))
-  var col = [];
-  window.cols = col;
+  var divContainer = document.getElementById("showData")
+  jsondata.forEach(person => {
+      console.log(person)
+      Object.keys(person).forEach(field => {
+          console.log(field)
+      })
+  })
+  return
+  
   for (var i = 0; i < jsondata.length; i++) {
       for (var key in jsondata[i]) {
           if (col.indexOf(key) === -1) {
