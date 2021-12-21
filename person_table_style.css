@@ -36,3 +36,7 @@
     font-weight: bold;
     color: #009879;
 }
+
+.styled-table tbody tr.info-row.hidden {
+    display: none;
+}
