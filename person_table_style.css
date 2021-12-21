@@ -40,3 +40,16 @@
 .styled-table tbody tr.info-row.hidden {
     display: none;
 }
+
+.info-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    width: max-content;
+  }
+  .info-label {
+    grid-column: 1;
+  }
+  .info-value {
+    grid-column: 2;
+  }

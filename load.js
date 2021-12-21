@@ -46,11 +46,19 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
       info_row.className = 'info-row hidden'
       let cell = info_row.insertCell(0)
       cell.colSpan = number_of_cols
+      let cell_el = document.createElement('div')
+      cell_el.className = 'info-wrapper'
+      cell.appendChild(cell_el)
       for(label in person) {
         if (label.substr(0, 2) === 'i_') {
-          let new_p = document.createElement('p')
-          new_p.innerText = person[label]
-          cell.appendChild(new_p)
+          let label_el = document.createElement('div')
+          label_el.className = 'info-label'
+          label_el.innerText = label.split('_')[1]
+          cell_el.appendChild(label_el)
+          let value_el = document.createElement('div')
+          value_el.className = 'info-value'
+          value_el.innerText = person[label]
+          cell_el.appendChild(value_el)
         }
       }
     })
