@@ -25,7 +25,7 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
   
     jsondata.forEach(person => {
       let person_row = table_body.insertRow()
-      person_row.id = person.jrk
+      person_row.id = person.kirjekood
       for(label in person) {
         let cell = person_row.insertCell()
         cell.innerText = person[label]
