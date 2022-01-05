@@ -22,6 +22,7 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
     let number_of_cols = 0
 
     let labels = jsondata[header_rows]
+    console.log({labels})
     for (label of labels) {
       if (label.substr(0, 2) === 'i_') {
         continue
@@ -41,34 +42,34 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
       }
 
       let person_row = table_body.insertRow()
-      person_row.onclick = () => {toggle_row(person.kirjekood)}
-      person_row.id = person.kirjekood
-      for(label in person) {
-        if (label.substr(0, 2) === 'i_') {
+      person_row.onclick = () => {toggle_row(person[0])}
+      person_row.id = person[0]
+      for(ix in person) {
+        if (labels[ix].substr(0, 2) === 'i_') {
           continue
         }
         let cell = person_row.insertCell()
-        cell.innerText = person[label]
+        cell.innerText = person[ix]
       }
 
       table_body.insertRow()
       let info_row = table_body.insertRow()
-      info_row.id = `info_${person.kirjekood}`
+      info_row.id = `info_${person[0]}`
       info_row.className = 'info-row hidden'
       let cell = info_row.insertCell(0)
       cell.colSpan = number_of_cols
       let cell_el = document.createElement('div')
       cell_el.className = 'info-wrapper'
       cell.appendChild(cell_el)
-      for(label in person) {
-        if (label.substr(0, 2) === 'i_') {
+      for(ix in person) {
+        if (labels[ix].substr(0, 2) === 'i_') {
           let label_el = document.createElement('div')
           label_el.className = 'info-label'
-          label_el.innerText = label.split('_')[1]
+          label_el.innerText = labels[ix].split('_')[1]
           cell_el.appendChild(label_el)
           let value_el = document.createElement('div')
           value_el.className = 'info-value'
-          value_el.innerText = person[label]
+          value_el.innerText = person[ix]
           cell_el.appendChild(value_el)
         }
       }
