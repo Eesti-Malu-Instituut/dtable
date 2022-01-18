@@ -1,6 +1,7 @@
-kuupäev,2022-01-05,,,,,,,,,,
-jutt,Ohvrite arv {{kokku}} (seisuga {{kuupäev}}) ning nende andmed muutuvad tabelis jooksvalt vastavalt täiendava info lisandumisele. ,,,,,,,,,,
-html,Ohvrite arv 7895 (seisuga 2022-01-05) ning nende andmed muutuvad tabelis jooksvalt vastavalt täiendava info lisandumisele. ,,,,,,,,,,
+,Pealkiri,Jutumall,Jutt,,,,,,,,
+et,NS Ohvrid,Ohvrite arv {{kokku}} (seisuga {{kuupäev}}) ning nende andmed muutuvad tabelis jooksvalt vastavalt täiendava info lisandumisele. ,Ohvrite arv 7895 (seisuga 2022-01-18) ning nende andmed muutuvad tabelis jooksvalt vastavalt täiendava info lisandumisele. ,,,,,,,,
+en,NS Ohvrid,The number of victims {{kokku}} (as of {{kuupäev}}) and their personal data in the table is continuously updated as supplemental information is added.,The number of victims 7895 (as of 2022-01-18) and their personal data in the table is continuously updated as supplemental information is added.,,,,,,,,
+ru,NS Ohvrid,"Число жертв — {{kokku}} (по состоянию на {{kuupäev}}). Их данные в таблице постоянно пополняются, исходя из поступления дополнительной информации.","Число жертв — 7895 (по состоянию на 2022-01-18). Их данные в таблице постоянно пополняются, исходя из поступления дополнительной информации.",,,,,,,,
 Kirjekood,Perekonnanimi,Perekonnanime variandid,Eesnimi,Eesnime variandid,Isanimi,Sünd,Surm,Elukoht,i_Amet,i_Asjaolud,i_Süüdistus
 NS-0000002,AAB,,ARNOLD,,,1916-06-24,1944-08-24,"Va, Taheva v",põllutööline,,Abistas langevarjureid.
 NS-0000003,AAB,,MINNA,,,1888-03-21,1944-08-24,"Va, Taheva v",,,Abistas langevarjureid.

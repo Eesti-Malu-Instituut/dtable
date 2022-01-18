@@ -1,6 +1,7 @@
 const query_string = window.location.search
 const urlParams = new URLSearchParams(query_string)
 const data_name = urlParams.get('data')
+const language = urlParams.get('lang', 'et')
 
 Papa.parse('./data/echo_' + data_name + '.csv', {
   header: false,
@@ -8,11 +9,10 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
   dynamicTyping: false,
   complete: function(results) {
     const jsondata = results.data
-    const header_rows = 3
+    const header_rows = 4
 
     let persons_container = document.getElementById('showData')
     let description_container = document.getElementById('description')
-    description_container.innerText = jsondata[header_rows-1][1]
     let persons_table = document.createElement('table')
     persons_container.appendChild(persons_table)
     persons_table.id = 'persons_table'
@@ -20,6 +20,15 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
     let table_header = persons_table.createTHead()
     let header_row = table_header.insertRow(0)
     let number_of_cols = 0
+
+
+    let meta = jsondata.slice(1, header_rows).filter(r => r[0] === language)[0]
+    const page_title = meta[1]
+    const page_lead = meta[3]
+    console.log({language, page_title, page_lead})
+    description_container.innerText = page_lead
+    document.title = page_title
+
 
     let labels = jsondata[header_rows]
     console.log({labels})
