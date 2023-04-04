@@ -50,6 +50,7 @@ Papa.parse('./data/echo_' + data_name + '.csv', {
         }
         let cell = person_row.insertCell()
         cell.innerText = person[ix]
+        cell.className = labels[ix]
       }
 
       table_body.insertRow()
