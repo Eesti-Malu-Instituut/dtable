@@ -46,10 +46,17 @@
     grid-template-columns: auto auto;
     gap: 10px;
     width: max-content;
-  }
-  .info-label {
+}
+
+.info-label {
     grid-column: 1;
-  }
-  .info-value {
+}
+.info-value {
     grid-column: 2;
-  }
+}
+
+.Sünd, .Surm {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
